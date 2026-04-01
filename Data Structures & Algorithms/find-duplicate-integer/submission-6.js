@@ -1,0 +1,15 @@
+class Solution {
+    /**
+     * @param {number[]} nums
+     * @return {number}
+     */
+    findDuplicate(nums) {
+        for (const num of nums) {
+            const idx = Math.abs(num) - 1;
+            if (nums[idx] < 0) {
+                return Math.abs(num);
+            }
+            nums[idx] *= -1;
+        }
+    }
+}
